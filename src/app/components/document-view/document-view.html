@@ -1,0 +1,64 @@
+<table mat-table [dataSource]="dataSource" matSort>
+  <!-- DocumentId -->
+  <ng-container matColumnDef="idocumentPk">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> DocumentId</th>
+    <td mat-cell *matCellDef="let element">{{ element.idocumentPk }}</td>
+  </ng-container>
+
+  <!-- SAP Doc No -->
+  <ng-container matColumnDef="sdocumentNo">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> SAP Doc No.</th>
+    <td mat-cell *matCellDef="let element">{{ element.sdocumentNo }}</td>
+  </ng-container>
+
+  <!-- Document Type -->
+  <ng-container matColumnDef="itypeFk">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Document Type</th>
+    <td mat-cell *matCellDef="let element">{{ element.itypeFk }}</td>
+  </ng-container>
+
+  <!-- Creation Date -->
+  <ng-container matColumnDef="dcreatedate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation Date</th>
+    <td mat-cell *matCellDef="let element">{{ element.dcreatedate ? (element.dcreatedate | date:'yyyy-MM-dd : HH:mm') : '' }}</td>
+  </ng-container>
+
+  <!-- Purchase Order No -->
+  <ng-container matColumnDef="sdescription">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Purchase Order No</th>
+    <td mat-cell *matCellDef="let element">{{ element.sdescription }}</td>
+  </ng-container>
+
+  <!-- Suppl add text -->
+  <ng-container matColumnDef="sprojectname">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Suppl add text</th>
+    <td mat-cell *matCellDef="let element">{{ element.sprojectname }}</td>
+  </ng-container>
+
+  <!-- Customer No -->
+  <ng-container matColumnDef="scustomerNo">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer No</th>
+    <td mat-cell *matCellDef="let element">{{ element.scustomerNo }}</td>
+  </ng-container>
+
+  <!-- Customer Name -->
+  <ng-container matColumnDef="scustomername1">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.scustomername1 }}</td>
+  </ng-container>
+
+  <!-- User ID -->
+  <ng-container matColumnDef="susername">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> User ID</th>
+    <td mat-cell *matCellDef="let element">{{ element.susername }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter</td>
+  </tr>
+
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons aria-label="Select page of users"></mat-paginator>

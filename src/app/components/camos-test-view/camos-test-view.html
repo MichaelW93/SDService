@@ -1,0 +1,12 @@
+<div style="display: flex; flex-direction: column; align-items: center; padding: 40px; gap: 20px;">
+  <mat-form-field>
+    <mat-label>ID of Camos' HTMLPanel</mat-label>
+    <input matInput [(ngModel)]="camosHTMLPanelId" placeholder="ID of Camos' HTMLPanel">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Message to camos</mat-label>
+    <textarea matInput [(ngModel)]="messageToCamos"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="callCamos()">Call Camos when camos is inside angular</button>
+  <button mat-raised-button color="primary" (click)="callCamosFromInside()">Call Camos when camos is outside angular</button>
+</div>

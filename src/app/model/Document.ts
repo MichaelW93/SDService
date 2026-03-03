@@ -1,0 +1,36 @@
+export interface TblDocument {
+  idocumentPk: number;
+  sdocumentNo: string | null;
+  sdescription: string | null;
+  sprojectname: string | null;
+  scustomername1: string | null;
+  scustomerstreet: string | null;
+  scustomerpostcode: string | null;
+  scustomercity: string | null;
+  scustomercontact: string | null;
+  ddateOfRfq: string | null;
+  dquotationDate: string | null;
+  istatusFk: number | null;
+  itypeFk: number | null;
+  seditor: string | null;
+  deditingSince: string | null;
+  srefDocumentno: string | null;
+  dcreatedate: string | null;
+  screatedBy: string | null;
+  dalterationdate: string | null;
+  salteredBy: string | null;
+  bdelflag: number | null;
+  susername: string | null;
+  scustomerNo: string | null;
+  seditsessionId: string | null;
+  scustomerland: string | null;
+  isalesorganisation: number | null;
+  suserfirstname: string | null;
+  suserlastname: string | null;
+  suserdepartment: string | null;
+  suserlanguagekey: string | null;
+  dpriceDate: string | null;
+  scustomerlanguage: string | null;
+  sdocumentguid: string | null;
+  c4cDocumentNo: string | null;
+}
