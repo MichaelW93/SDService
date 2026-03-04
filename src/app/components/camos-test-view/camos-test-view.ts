@@ -28,7 +28,7 @@ export class CamosTestView {
       messageResult = this.messageToCamos;
     }
     console.log("Calling Camos when it is inside angular with ID", camosHTMLPanelIdCleaned, "and message: ", messageResult);
-    (document.querySelector(camosHTMLPanelIdCleaned) as any)?.callHTMLClient(messageResult);
+    (document.querySelector(camosHTMLPanelIdCleaned) as any)!.callHTMLClient(messageResult);
   }
   callCamosFromInside() {
     let messageResult = "Hello from angular";
@@ -36,6 +36,18 @@ export class CamosTestView {
       messageResult = this.messageToCamos;
     }
     console.log("Calling Camos when angular is inside camos with message: ", messageResult);
-    (window as any)?.callHTMLClient(messageResult);
+    (window as any)!.callHTMLClient(messageResult);
+    console.log("Camos called");
+  }
+
+  callCamosWithPostMessage() {
+    let messageResult = "Hello from angular";
+    if (this.messageToCamos !== "") {
+      messageResult = this.messageToCamos;
+    }
+    window.parent.postMessage(
+      { type: "CALL_HTML_CLIENT", payload: messageResult },
+      "*"
+    );
   }
 }
